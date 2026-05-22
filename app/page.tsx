@@ -3,6 +3,8 @@ import { ReservationPetForm } from './components/ReservationPetForm';
 import { OpenLaverieForm } from './components/OpenLaverieForm';
 import { MachineReservationForm } from './components/MachineReservationForm';
 import { EventRequestForm } from './components/EventRequestForm';
+import { HomePickupForm } from './components/HomePickupForm';
+import { ProLinenForm } from './components/ProLinenForm';
 
 export default function Home() {
   return (
@@ -191,11 +193,121 @@ export default function Home() {
           </div>
         </section>
 
+        {/* ═══════════════════ COLLECTE LINGE À DOMICILE ═══════════════════ */}
+        <section className="bg-creme-2" id="pickup">
+          <div className="container">
+            <div className="section-head">
+              <span className="eyebrow">◆ 04 — Collecte à domicile</span>
+              <h2>
+                Votre linge,
+                <br />
+                <em>chez vous.</em>
+              </h2>
+              <p className="lede">
+                Pas le temps de passer&nbsp;? Nous venons chercher votre linge
+                directement chez vous, on le lave avec soin dans notre laverie, et
+                on vous le restitue plié, prêt à ranger. Sur Nevers et alentours.
+              </p>
+              <span className="gold-rule" aria-hidden="true" />
+            </div>
+
+            <div
+              style={{
+                marginTop: 48,
+                display: 'grid',
+                gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))',
+                gap: 32,
+                paddingBottom: 24,
+                borderBottom: '1px solid var(--ligne)',
+              }}
+            >
+              <PickupFeature
+                num="01"
+                title="On vient chercher"
+                text="Sur RDV, créneau de votre choix. Vous laissez vos sacs, on s'occupe du reste."
+              />
+              <PickupFeature
+                num="02"
+                title="On lave avec soin"
+                text="Machines pro, tri par couleur et matière, séchage adapté. Linge délicat sur demande."
+              />
+              <PickupFeature
+                num="03"
+                title="On vous le rapporte"
+                text="Plié, propre, prêt à ranger. À l'heure convenue, sans surprise."
+              />
+              <PickupFeature
+                num="04"
+                title="Tarif clair"
+                text="Au poids ou au forfait. Devis transparent sous 24h après votre demande."
+              />
+            </div>
+
+            <HomePickupForm />
+          </div>
+        </section>
+
+        {/* ═══════════════════ PROS / B2B ═══════════════════ */}
+        <section className="bg-vert" id="pros">
+          <div className="container">
+            <div className="section-head">
+              <span className="eyebrow">◆ 05 — Professionnels</span>
+              <h2>
+                Pour les pros&nbsp;:
+                <br />
+                <em>hôtels, gîtes, restaurants…</em>
+              </h2>
+              <p className="lede">
+                Hôtels, B&amp;B, gîtes Airbnb, restaurants, salons de coiffure,
+                cabinets, crèches&nbsp;: nous lavons et livrons votre linge
+                professionnel à la fréquence qui vous convient — devis sur mesure
+                selon votre volume.
+              </p>
+              <span className="gold-rule" aria-hidden="true" />
+            </div>
+
+            <div
+              style={{
+                marginTop: 48,
+                display: 'grid',
+                gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))',
+                gap: 32,
+                paddingBottom: 32,
+                borderBottom: '1px solid rgba(251,248,242,0.18)',
+                color: 'rgba(251, 248, 242, 0.85)',
+              }}
+            >
+              <ProFeature
+                num="01"
+                title="Volume sur mesure"
+                text="De 20 kg à plus de 200 kg / semaine, on dimensionne avec vous."
+              />
+              <ProFeature
+                num="02"
+                title="Fréquence flexible"
+                text="Quotidienne, hebdo, à la demande. On s'adapte à votre activité."
+              />
+              <ProFeature
+                num="03"
+                title="Qualité hôtelière"
+                text="Lavage soigné, conditionnement propre, traçabilité. Le standard pro."
+              />
+              <ProFeature
+                num="04"
+                title="Collecte + livraison"
+                text="Service complet possible — vous n'avez plus à vous en soucier."
+              />
+            </div>
+
+            <ProLinenForm />
+          </div>
+        </section>
+
         {/* ═══════════════════ ÉVÉNEMENTS / PRIVATISATION ═══════════════════ */}
         <section className="bg-vert" id="evenement">
           <div className="container">
             <div className="section-head">
-              <span className="eyebrow">◆ 04 — Privatisation</span>
+              <span className="eyebrow">◆ 06 — Privatisation</span>
               <h2>
                 Votre événement
                 <br />
@@ -238,7 +350,7 @@ export default function Home() {
         <section className="bg-creme-2" id="animaux">
           <div className="container">
             <div className="section-head">
-              <span className="eyebrow">◆ 05 — Linge animaux</span>
+              <span className="eyebrow">◆ 07 — Linge animaux</span>
               <h2>
                 Réservez une <em>épillette</em>
                 <br />
@@ -260,7 +372,7 @@ export default function Home() {
         <section className="bg-marron" id="ouvrir">
           <div className="container">
             <div className="section-head">
-              <span className="eyebrow">◆ 06 — Entreprendre</span>
+              <span className="eyebrow">◆ 08 — Entreprendre</span>
               <h2>
                 Lancez votre propre
                 <br />
@@ -300,13 +412,23 @@ export default function Home() {
             </div>
 
             <div className="footer-col">
-              <h4>Navigation</h4>
+              <h4>Particuliers</h4>
               <ul>
-                <li><a href="#services">Services</a></li>
-                <li><a href="#app">App &amp; Bonus</a></li>
                 <li><a href="#reservation">Réserver une machine</a></li>
-                <li><a href="#evenement">Privatisation</a></li>
+                <li><a href="#pickup">Collecte à domicile</a></li>
                 <li><a href="#animaux">Linge animaux</a></li>
+                <li><a href="#evenement">Privatisation</a></li>
+                <li><a href="#app">App &amp; Bonus</a></li>
+              </ul>
+            </div>
+
+            <div className="footer-col">
+              <h4>Professionnels</h4>
+              <ul>
+                <li><a href="#pros">Hôtels &amp; gîtes</a></li>
+                <li><a href="#pros">Restaurants</a></li>
+                <li><a href="#pros">Salons / cabinets</a></li>
+                <li><a href="#evenement">Privatiser l&apos;espace</a></li>
               </ul>
             </div>
 
@@ -352,6 +474,77 @@ function ServiceCard({
       <h3 className="service-title">{title}</h3>
       <p className="service-body">{body}</p>
     </article>
+  );
+}
+
+function PickupFeature({
+  num,
+  title,
+  text,
+}: {
+  num: string;
+  title: string;
+  text: string;
+}) {
+  return (
+    <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
+      <span
+        style={{
+          fontFamily: 'var(--mono)',
+          fontSize: 11,
+          letterSpacing: '0.22em',
+          textTransform: 'uppercase',
+          color: 'var(--marron-cafe)',
+        }}
+      >
+        {num}
+      </span>
+      <h3 style={{ fontFamily: 'var(--serif)', fontSize: 22, lineHeight: 1.2 }}>
+        {title}
+      </h3>
+      <p style={{ fontSize: 14, color: 'var(--texte-mute)', lineHeight: 1.55 }}>
+        {text}
+      </p>
+    </div>
+  );
+}
+
+function ProFeature({
+  num,
+  title,
+  text,
+}: {
+  num: string;
+  title: string;
+  text: string;
+}) {
+  return (
+    <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
+      <span
+        style={{
+          fontFamily: 'var(--mono)',
+          fontSize: 11,
+          letterSpacing: '0.22em',
+          textTransform: 'uppercase',
+          color: 'var(--marron-claire)',
+        }}
+      >
+        {num}
+      </span>
+      <h3
+        style={{
+          fontFamily: 'var(--serif)',
+          fontSize: 22,
+          lineHeight: 1.2,
+          color: 'var(--ivoire)',
+        }}
+      >
+        {title}
+      </h3>
+      <p style={{ fontSize: 14, color: 'rgba(251, 248, 242, 0.7)', lineHeight: 1.55 }}>
+        {text}
+      </p>
+    </div>
   );
 }
 

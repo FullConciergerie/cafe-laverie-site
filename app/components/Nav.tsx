@@ -5,9 +5,9 @@ import { useEffect, useState } from 'react';
 const LINKS = [
   { href: '#services', label: 'Services' },
   { href: '#app', label: 'App & Bonus' },
-  { href: '#reservation', label: 'Réserver' },
-  { href: '#evenement', label: 'Privatisation' },
-  { href: '#animaux', label: 'Linge animaux' },
+  { href: '#pickup', label: 'À domicile' },
+  { href: '#pros', label: 'Pros' },
+  { href: '#evenement', label: 'Événements' },
   { href: '#ouvrir', label: 'Entreprendre' },
 ];
 

@@ -63,3 +63,13 @@ export async function submitEventRequest(formData: FormData): Promise<FormResult
   const data = formDataToObject(formData);
   return sendNotification('Nouvelle demande — Privatisation espace', data);
 }
+
+export async function submitHomePickup(formData: FormData): Promise<FormResult> {
+  const data = formDataToObject(formData);
+  return sendNotification('Nouvelle demande — Collecte linge à domicile', data);
+}
+
+export async function submitProLinen(formData: FormData): Promise<FormResult> {
+  const data = formDataToObject(formData);
+  return sendNotification('Nouvelle demande — Linge professionnels (B2B)', data);
+}
