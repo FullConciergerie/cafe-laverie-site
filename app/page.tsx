@@ -4,6 +4,7 @@ import { OpenLaverieForm } from './components/OpenLaverieForm';
 import { EventRequestForm } from './components/EventRequestForm';
 import { HomePickupForm } from './components/HomePickupForm';
 import { ProLinenForm } from './components/ProLinenForm';
+import { CollapsibleForm } from './components/CollapsibleForm';
 
 export default function Home() {
   return (
@@ -222,7 +223,13 @@ export default function Home() {
               />
             </div>
 
-            <HomePickupForm />
+            <CollapsibleForm
+              ctaTitle="Programmer une collecte à domicile"
+              ctaDescription="Renseignez votre adresse, votre volume et un créneau — devis sous 24h."
+              ctaLabel="Programmer ma collecte"
+            >
+              <HomePickupForm />
+            </CollapsibleForm>
           </div>
         </section>
 
@@ -278,7 +285,14 @@ export default function Home() {
               />
             </div>
 
-            <ProLinenForm />
+            <CollapsibleForm
+              variant="dark"
+              ctaTitle="Demander un devis professionnel"
+              ctaDescription="Volume, fréquence, type de linge — on construit ensemble un devis sur mesure sous 48h."
+              ctaLabel="Demander un devis pro"
+            >
+              <ProLinenForm />
+            </CollapsibleForm>
           </div>
         </section>
 
@@ -321,7 +335,14 @@ export default function Home() {
               </div>
             </div>
 
-            <EventRequestForm />
+            <CollapsibleForm
+              variant="dark"
+              ctaTitle="Privatiser l'espace pour votre événement"
+              ctaDescription="Parlez-nous de votre projet — vernissage, présentation, atelier, anniversaire. Réponse sous 48h."
+              ctaLabel="Privatiser l'espace"
+            >
+              <EventRequestForm />
+            </CollapsibleForm>
           </div>
         </section>
 
@@ -343,7 +364,13 @@ export default function Home() {
               </p>
               <span className="gold-rule" aria-hidden="true" />
             </div>
-            <ReservationPetForm />
+            <CollapsibleForm
+              ctaTitle="Réserver mes épillettes"
+              ctaDescription="Choisissez le nombre d'épillettes, le type de linge et la date — confirmation sous 24h."
+              ctaLabel="Réserver mes épillettes"
+            >
+              <ReservationPetForm />
+            </CollapsibleForm>
           </div>
         </section>
 
@@ -365,7 +392,14 @@ export default function Home() {
               </p>
               <span className="gold-rule" aria-hidden="true" />
             </div>
-            <OpenLaverieForm />
+            <CollapsibleForm
+              variant="dark"
+              ctaTitle="Postuler pour un appel découverte"
+              ctaDescription="30 minutes gratuites avec Delil pour cadrer votre projet et votre marché local."
+              ctaLabel="Demander un appel découverte"
+            >
+              <OpenLaverieForm />
+            </CollapsibleForm>
           </div>
         </section>
 
