@@ -56,7 +56,7 @@ export default function Home() {
         <div className="band-info">
           <span>Ouvert sur demande</span>
           <span>16 Quai de Mantoue · 58000 Nevers</span>
-          <span>06 61 75 37 38</span>
+          <span>03 76 15 02 27</span>
         </div>
 
         {/* ═══════════════════ SERVICES (4 piliers) ═══════════════════ */}
@@ -331,15 +331,15 @@ export default function Home() {
             <div className="section-head">
               <span className="eyebrow">◆ 06 — Linge animaux</span>
               <h2>
-                Réservez une <em>épillette</em>
+                Réservez vos <em>épillettes</em>
                 <br />
                 pour le linge de vos compagnons.
               </h2>
               <p className="lede">
                 Coussins, couvertures, vêtements, harnais : votre animal mérite un
-                linge propre et sain. Réservez votre créneau dédié — équipement
-                adapté, sans risque de contamination avec le linge des autres
-                clients.
+                linge propre et sain. Réservez le nombre d&apos;épillettes
+                nécessaire — équipement adapté, sans risque de contamination avec
+                le linge des autres clients.
               </p>
               <span className="gold-rule" aria-hidden="true" />
             </div>
@@ -383,7 +383,7 @@ export default function Home() {
             <div className="footer-col">
               <h4>Contact</h4>
               <ul>
-                <li><a href="tel:+33661753738">06 61 75 37 38</a></li>
+                <li><a href="tel:+33376150227">03 76 15 02 27</a></li>
                 <li><a href="mailto:contact@cafe-laverie.fr">contact@cafe-laverie.fr</a></li>
                 <li>16 Quai de Mantoue<br />58000 Nevers</li>
                 <li><strong>Sur demande</strong> — Pas d&apos;horaires fixes</li>

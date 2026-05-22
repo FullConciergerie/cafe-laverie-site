@@ -76,11 +76,11 @@ export function Nav() {
               ))}
             </ul>
             <a
-              href="tel:+33661753738"
+              href="tel:+33376150227"
               className="drawer-tel"
               onClick={close}
             >
-              📞 06 61 75 37 38
+              📞 03 76 15 02 27
             </a>
             <a
               href="#app"

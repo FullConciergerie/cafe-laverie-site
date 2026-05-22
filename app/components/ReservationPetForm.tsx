@@ -48,10 +48,30 @@ export function ReservationPetForm() {
 
       <div className="form-section">
         <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
-          <span className="form-section-eyebrow">02 — Votre demande</span>
+          <span className="form-section-eyebrow">02 — Votre réservation</span>
           <h3 className="form-section-title">
-            Que voulez-vous laver pour votre compagnon&nbsp;?
+            Combien d&apos;épillettes, et pour quel linge&nbsp;?
           </h3>
+        </div>
+        <div className="form-row">
+          <SelectField
+            label="Nombre d'épillettes"
+            name="quantity"
+            required
+            options={[
+              '',
+              '1 épillette',
+              '2 épillettes',
+              '3 épillettes',
+              '4 épillettes',
+              '5 épillettes ou plus',
+            ]}
+          />
+          <SelectField
+            label="Espèce de l'animal"
+            name="petType"
+            options={['', 'Chien', 'Chat', 'Cheval', 'Rongeur', 'Plusieurs animaux', 'Autre']}
+          />
         </div>
         <div className="form-row">
           <SelectField
@@ -60,21 +80,16 @@ export function ReservationPetForm() {
             required
             options={['', ...LINEN_TYPES]}
           />
-          <SelectField
-            label="Espèce de l'animal"
-            name="petType"
-            options={['', 'Chien', 'Chat', 'Cheval', 'Rongeur', 'Autre']}
-          />
-        </div>
-        <div className="form-row">
           <Field
             label="Date souhaitée"
             name="desiredDate"
             type="date"
             placeholder="JJ/MM/AAAA"
           />
+        </div>
+        <div className="form-row full">
           <Field
-            label="Créneau préféré"
+            label="Créneau préféré (facultatif)"
             name="timeSlot"
             placeholder="Ex : matin, après-midi…"
           />
@@ -91,8 +106,8 @@ export function ReservationPetForm() {
 
       {result && 'success' in result && (
         <div role="status" className="form-alert success">
-          ✓ <strong>Demande reçue.</strong> Nous revenons vers vous sous 24h pour confirmer
-          le créneau et le tarif.
+          ✓ <strong>Demande reçue.</strong> Nous revenons vers vous sous 24h pour
+          confirmer la disponibilité du nombre d&apos;épillettes demandé et le tarif.
         </div>
       )}
       {result && 'error' in result && (
@@ -104,7 +119,7 @@ export function ReservationPetForm() {
       <div className="form-footer">
         <span className="form-note">Réponse sous 24h</span>
         <button type="submit" disabled={isPending} className="form-submit">
-          <span>{isPending ? 'Envoi…' : 'Réserver mon créneau'}</span>
+          <span>{isPending ? 'Envoi…' : 'Réserver mes épillettes'}</span>
           <span className="arrow" aria-hidden="true">→</span>
         </button>
       </div>
