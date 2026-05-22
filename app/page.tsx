@@ -1,65 +1,383 @@
-import Image from "next/image";
+import { Nav } from './components/Nav';
+import { ReservationPetForm } from './components/ReservationPetForm';
+import { OpenLaverieForm } from './components/OpenLaverieForm';
+import { MachineReservationForm } from './components/MachineReservationForm';
+import { EventRequestForm } from './components/EventRequestForm';
 
 export default function Home() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
+    <>
+      <Nav />
+
+      <main id="top">
+        {/* ═══════════════════ HERO ═══════════════════ */}
+        <section className="hero">
+          <div className="hero-content">
+            <div className="hero-text">
+              <span className="eyebrow">◆ Café Laverie · Nevers · Quai de Mantoue</span>
+              <h1>
+                Laverie nouvelle
+                <br />
+                <span className="vert">génération</span>
+                <br />
+                <span className="marron-cursive">&amp; café cosy.</span>
+              </h1>
+              <p className="lede">
+                Un lieu unique à Nevers où l&apos;on lave son linge dans une ambiance
+                café chaleureuse. Machines de pointe, wifi gratuit, espace
+                privatisable pour vos événements — la laverie comme on l&apos;avait
+                rarement imaginée.
+              </p>
+              <div className="hero-actions">
+                <a href="#reservation" className="btn btn-marron">
+                  <span>Réserver une machine</span>
+                  <span className="arrow" aria-hidden="true">→</span>
+                </a>
+                <a href="#app" className="btn btn-outline">
+                  <span>Télécharger l&apos;app</span>
+                  <span className="arrow" aria-hidden="true">→</span>
+                </a>
+              </div>
+            </div>
+
+            <div className="hero-visual">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src="/images/devanture.jpg" alt="Café Laverie Nevers — devanture quai de Mantoue" />
+              <div className="hero-badge">
+                <span className="num">+20<span className="pct">%</span></span>
+                <span className="label">Bonus sur l&apos;app</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* ═══════════════════ BANDEAU INFO ═══════════════════ */}
+        <div className="band-info">
+          <span>Ouvert sur demande</span>
+          <span>16 Quai de Mantoue · 58000 Nevers</span>
+          <span>06 61 75 37 38</span>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
+
+        {/* ═══════════════════ SERVICES (4 piliers) ═══════════════════ */}
+        <section className="bg-creme" id="services">
+          <div className="container">
+            <div className="section-head">
+              <span className="eyebrow">◆ 01 — L&apos;expérience</span>
+              <h2>
+                Plus qu&apos;une laverie.
+                <br />
+                <em>Un lieu de vie.</em>
+              </h2>
+              <p className="lede">
+                Quatre piliers qui font la différence entre un passage forcé chez le
+                laveur du coin et un vrai moment pour soi.
+              </p>
+              <span className="gold-rule" aria-hidden="true" />
+            </div>
+
+            <div className="services-grid">
+              <ServiceCard
+                num="01"
+                title="Café cosy"
+                body="Café, thés, jus à 20 centimes. Mobilier confortable, wifi gratuit, prises électriques. Travaillez ou détendez-vous pendant le cycle."
+              />
+              <ServiceCard
+                num="02"
+                title="Machines de pointe"
+                body="Lave-linge de 8 à 18 kg, sèche-linge professionnels. Couettes, oreillers, gros volumes — rien ne nous fait peur."
+              />
+              <ServiceCard
+                num="03"
+                title="Service à domicile"
+                body="Dépôt et récupération du linge à domicile sur Nevers — la lessive sans bouger de chez vous."
+              />
+              <ServiceCard
+                num="04"
+                title="Espace privatisable"
+                body="Vernissages, présentations, ateliers, anniversaires : on transforme l'espace café en lieu d'événement sur demande."
+              />
+            </div>
+          </div>
+        </section>
+
+        {/* ═══════════════════ APP / BONUS 20% ═══════════════════ */}
+        <section className="bg-creme-2" id="app">
+          <div className="container">
+            <div className="section-head">
+              <span className="eyebrow">◆ 02 — App &amp; Bonus</span>
+              <h2>
+                Téléchargez sur place,
+                <br />
+                <em>gagnez jusqu&apos;à 20&nbsp;%.</em>
+              </h2>
+              <p className="lede">
+                À la borne, scannez le QR code pour télécharger l&apos;application
+                officielle. Chaque rechargement vous offre un bonus — jusqu&apos;à
+                20&nbsp;% en plus sur votre solde.
+              </p>
+              <span className="gold-rule" aria-hidden="true" />
+            </div>
+
+            <div className="app-section">
+              <div className="app-text">
+                <ul style={{ display: 'flex', flexDirection: 'column', gap: 18 }}>
+                  <BenefitLine>Rechargez votre carte sur l&apos;app, et profitez du bonus.</BenefitLine>
+                  <BenefitLine>Réservez vos machines de chez vous, avant d&apos;arriver.</BenefitLine>
+                  <BenefitLine>Suivez la disponibilité en temps réel.</BenefitLine>
+                  <BenefitLine>Recevez une notification quand votre cycle est terminé.</BenefitLine>
+                </ul>
+                <div className="app-stats">
+                  <div className="app-stat">
+                    <span className="v">+20<span className="pct">%</span></span>
+                    <span className="l">Bonus max sur rechargement</span>
+                  </div>
+                  <div className="app-stat">
+                    <span className="v">0<span className="pct">€</span></span>
+                    <span className="l">Téléchargement gratuit</span>
+                  </div>
+                  <div className="app-stat">
+                    <span className="v">24/7</span>
+                    <span className="l">Accès à votre compte</span>
+                  </div>
+                </div>
+                <div style={{ marginTop: 8 }}>
+                  <a
+                    href="https://lmcpay.touchnpay.fr/fr/qr-code/30dwf38lxkgzpa5"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="btn btn-marron"
+                  >
+                    <span>Télécharger l&apos;application</span>
+                    <span className="arrow" aria-hidden="true">→</span>
+                  </a>
+                </div>
+              </div>
+
+              <div className="app-card">
+                <span className="cursive-tag">Bonus</span>
+                <div className="bonus">
+                  +20<span className="pct">%</span>
+                </div>
+                <p className="bonus-text">
+                  Sur chaque rechargement effectué via l&apos;application —
+                  cumulable, sans plafond, valable sur toutes les machines.
+                </p>
+                <p className="qr-note">
+                  📱 Scannez le QR code à la borne pour télécharger
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* ═══════════════════ RÉSERVATION MACHINE ═══════════════════ */}
+        <section className="bg-creme" id="reservation">
+          <div className="container">
+            <div className="section-head">
+              <span className="eyebrow">◆ 03 — Réservation</span>
+              <h2>
+                Réservez votre machine,
+                <br />
+                <em>arrivez l&apos;esprit tranquille.</em>
+              </h2>
+              <p className="lede">
+                Bloquez une machine depuis chez vous via l&apos;application, ou
+                remplissez ce formulaire pour une réservation par téléphone — on
+                vous confirme sous 1h.
+              </p>
+              <span className="gold-rule" aria-hidden="true" />
+            </div>
+            <MachineReservationForm />
+          </div>
+        </section>
+
+        {/* ═══════════════════ ÉVÉNEMENTS / PRIVATISATION ═══════════════════ */}
+        <section className="bg-vert" id="evenement">
+          <div className="container">
+            <div className="section-head">
+              <span className="eyebrow">◆ 04 — Privatisation</span>
+              <h2>
+                Votre événement
+                <br />
+                <em>dans un lieu unique.</em>
+              </h2>
+              <p className="lede">
+                Présentation de bijoux en collaboration avec une créatrice, vernissage
+                d&apos;artiste, atelier, anniversaire intime : l&apos;espace café se
+                transforme sur demande pour vos événements.
+              </p>
+              <span className="gold-rule" aria-hidden="true" />
+            </div>
+
+            <div className="event-grid">
+              <div className="event-visual">
+                <span className="scribble">Sur demande.</span>
+                <span className="label">Espace privatisable</span>
+              </div>
+              <div className="event-text">
+                <p style={{ fontSize: 17, color: 'rgba(251, 248, 242, 0.78)', lineHeight: 1.65 }}>
+                  Nous avons déjà accueilli des collaborations comme la présentation
+                  de bijoux d&apos;une créatrice locale. L&apos;ambiance, la lumière
+                  douce, le mobilier chaleureux — tout y est pour faire de votre
+                  événement un moment mémorable.
+                </p>
+                <ul className="event-list" style={{ color: 'rgba(251, 248, 242, 0.88)', borderTopColor: 'rgba(251,248,242,0.18)' }}>
+                  <li>Vernissages d&apos;artistes &amp; expositions éphémères</li>
+                  <li>Présentations / lancements produits</li>
+                  <li>Ateliers créatifs en petit comité</li>
+                  <li>Anniversaires &amp; moments privés (jusqu&apos;à 30 personnes)</li>
+                </ul>
+              </div>
+            </div>
+
+            <EventRequestForm />
+          </div>
+        </section>
+
+        {/* ═══════════════════ LINGE ANIMAUX ═══════════════════ */}
+        <section className="bg-creme-2" id="animaux">
+          <div className="container">
+            <div className="section-head">
+              <span className="eyebrow">◆ 05 — Linge animaux</span>
+              <h2>
+                Réservez une <em>épillette</em>
+                <br />
+                pour le linge de vos compagnons.
+              </h2>
+              <p className="lede">
+                Coussins, couvertures, vêtements, harnais : votre animal mérite un
+                linge propre et sain. Réservez votre créneau dédié — équipement
+                adapté, sans risque de contamination avec le linge des autres
+                clients.
+              </p>
+              <span className="gold-rule" aria-hidden="true" />
+            </div>
+            <ReservationPetForm />
+          </div>
+        </section>
+
+        {/* ═══════════════════ OUVRIR UNE LAVERIE ═══════════════════ */}
+        <section className="bg-marron" id="ouvrir">
+          <div className="container">
+            <div className="section-head">
+              <span className="eyebrow">◆ 06 — Entreprendre</span>
+              <h2>
+                Lancez votre propre
+                <br />
+                <em>Café Laverie.</em>
+              </h2>
+              <p className="lede">
+                Vous voulez ouvrir un Café Laverie dans votre ville&nbsp;? Nous
+                avons construit le modèle à Nevers — méthode rodée, retour
+                d&apos;expérience, accompagnement opérationnel. Postulez pour un
+                appel découverte de 30 minutes, gratuit.
+              </p>
+              <span className="gold-rule" aria-hidden="true" />
+            </div>
+            <OpenLaverieForm />
+          </div>
+        </section>
+
+        {/* ═══════════════════ FOOTER ═══════════════════ */}
+        <footer className="main">
+          <div className="footer-grid">
+            <div className="footer-brand">
+              <span className="footer-name">Café Laverie</span>
+              <p>
+                La laverie nouvelle génération à Nevers, où l&apos;on conjugue
+                lessive et café cosy — quai de Mantoue, dans une ambiance unique.
+              </p>
+            </div>
+
+            <div className="footer-col">
+              <h4>Contact</h4>
+              <ul>
+                <li><a href="tel:+33661753738">06 61 75 37 38</a></li>
+                <li><a href="mailto:contact@cafe-laverie.fr">contact@cafe-laverie.fr</a></li>
+                <li>16 Quai de Mantoue<br />58000 Nevers</li>
+                <li><strong>Sur demande</strong> — Pas d&apos;horaires fixes</li>
+              </ul>
+            </div>
+
+            <div className="footer-col">
+              <h4>Navigation</h4>
+              <ul>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#app">App &amp; Bonus</a></li>
+                <li><a href="#reservation">Réserver une machine</a></li>
+                <li><a href="#evenement">Privatisation</a></li>
+                <li><a href="#animaux">Linge animaux</a></li>
+              </ul>
+            </div>
+
+            <div className="footer-col">
+              <h4>Entreprendre</h4>
+              <ul>
+                <li><a href="#ouvrir">Ouvrir une laverie →</a></li>
+                <li>
+                  <a
+                    href="https://full-nevers-conciergerie.fr"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Full Conciergerie →
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div className="footer-bot">
+            <small>© {new Date().getFullYear()} Café Laverie Nevers · Tous droits réservés</small>
+            <small>Conçu avec soin à Nevers</small>
+          </div>
+        </footer>
       </main>
-    </div>
+    </>
+  );
+}
+
+function ServiceCard({
+  num,
+  title,
+  body,
+}: {
+  num: string;
+  title: string;
+  body: string;
+}) {
+  return (
+    <article className="service-card">
+      <span className="service-num">{num}</span>
+      <h3 className="service-title">{title}</h3>
+      <p className="service-body">{body}</p>
+    </article>
+  );
+}
+
+function BenefitLine({ children }: { children: React.ReactNode }) {
+  return (
+    <li
+      style={{
+        display: 'flex',
+        gap: 14,
+        alignItems: 'flex-start',
+        fontSize: 16,
+        color: 'var(--texte)',
+        lineHeight: 1.55,
+      }}
+    >
+      <span
+        aria-hidden="true"
+        style={{
+          flexShrink: 0,
+          width: 28,
+          height: 1,
+          marginTop: 14,
+          background: 'var(--marron-cafe)',
+        }}
+      />
+      <span>{children}</span>
+    </li>
   );
 }
