@@ -39,8 +39,8 @@ export function Nav() {
         </nav>
 
         <div className="nav-cta">
-          <a href="#reservation" className="btn btn-marron">
-            <span>Réserver une machine</span>
+          <a href="#app" className="btn btn-marron">
+            <span>Réserver via l&apos;app</span>
             <span className="arrow" aria-hidden="true">→</span>
           </a>
           <button
@@ -83,12 +83,12 @@ export function Nav() {
               📞 06 61 75 37 38
             </a>
             <a
-              href="#reservation"
+              href="#app"
               onClick={close}
               className="btn btn-marron"
               style={{ justifyContent: 'center' }}
             >
-              Réserver une machine
+              Réserver via l&apos;app
               <span className="arrow" aria-hidden="true">→</span>
             </a>
           </div>

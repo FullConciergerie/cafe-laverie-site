@@ -54,11 +54,6 @@ export async function submitOpenLaverie(formData: FormData): Promise<FormResult>
   return sendNotification('Nouvelle candidature — Ouvrir une laverie', data);
 }
 
-export async function submitMachineReservation(formData: FormData): Promise<FormResult> {
-  const data = formDataToObject(formData);
-  return sendNotification('Nouvelle réservation machine', data);
-}
-
 export async function submitEventRequest(formData: FormData): Promise<FormResult> {
   const data = formDataToObject(formData);
   return sendNotification('Nouvelle demande — Privatisation espace', data);

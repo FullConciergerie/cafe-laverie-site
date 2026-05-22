@@ -1,7 +1,6 @@
 import { Nav } from './components/Nav';
 import { ReservationPetForm } from './components/ReservationPetForm';
 import { OpenLaverieForm } from './components/OpenLaverieForm';
-import { MachineReservationForm } from './components/MachineReservationForm';
 import { EventRequestForm } from './components/EventRequestForm';
 import { HomePickupForm } from './components/HomePickupForm';
 import { ProLinenForm } from './components/ProLinenForm';
@@ -31,12 +30,12 @@ export default function Home() {
                 rarement imaginée.
               </p>
               <div className="hero-actions">
-                <a href="#reservation" className="btn btn-marron">
-                  <span>Réserver une machine</span>
+                <a href="#app" className="btn btn-marron">
+                  <span>Réserver via l&apos;app</span>
                   <span className="arrow" aria-hidden="true">→</span>
                 </a>
-                <a href="#app" className="btn btn-outline">
-                  <span>Télécharger l&apos;app</span>
+                <a href="#pickup" className="btn btn-outline">
+                  <span>Linge à domicile</span>
                   <span className="arrow" aria-hidden="true">→</span>
                 </a>
               </div>
@@ -106,16 +105,17 @@ export default function Home() {
         <section className="bg-creme-2" id="app">
           <div className="container">
             <div className="section-head">
-              <span className="eyebrow">◆ 02 — App &amp; Bonus</span>
+              <span className="eyebrow">◆ 02 — App, réservation &amp; bonus</span>
               <h2>
-                Téléchargez sur place,
+                Réservez votre machine,
                 <br />
                 <em>gagnez jusqu&apos;à 20&nbsp;%.</em>
               </h2>
               <p className="lede">
-                À la borne, scannez le QR code pour télécharger l&apos;application
-                officielle. Chaque rechargement vous offre un bonus — jusqu&apos;à
-                20&nbsp;% en plus sur votre solde.
+                Toute la laverie tient dans une application. Téléchargez-la
+                directement sur place en scannant le QR code à la borne — c&apos;est
+                gratuit, et chaque rechargement vous offre un bonus pouvant aller
+                jusqu&apos;à 20&nbsp;%.
               </p>
               <span className="gold-rule" aria-hidden="true" />
             </div>
@@ -123,9 +123,9 @@ export default function Home() {
             <div className="app-section">
               <div className="app-text">
                 <ul style={{ display: 'flex', flexDirection: 'column', gap: 18 }}>
-                  <BenefitLine>Rechargez votre carte sur l&apos;app, et profitez du bonus.</BenefitLine>
-                  <BenefitLine>Réservez vos machines de chez vous, avant d&apos;arriver.</BenefitLine>
-                  <BenefitLine>Suivez la disponibilité en temps réel.</BenefitLine>
+                  <BenefitLine><strong>Réservez vos machines de chez vous</strong>, avant même d&apos;arriver à la laverie.</BenefitLine>
+                  <BenefitLine>Rechargez votre carte sur l&apos;app, et profitez du bonus jusqu&apos;à 20&nbsp;%.</BenefitLine>
+                  <BenefitLine>Suivez la disponibilité des machines en temps réel.</BenefitLine>
                   <BenefitLine>Recevez une notification quand votre cycle est terminé.</BenefitLine>
                 </ul>
                 <div className="app-stats">
@@ -172,32 +172,11 @@ export default function Home() {
           </div>
         </section>
 
-        {/* ═══════════════════ RÉSERVATION MACHINE ═══════════════════ */}
-        <section className="bg-creme" id="reservation">
-          <div className="container">
-            <div className="section-head">
-              <span className="eyebrow">◆ 03 — Réservation</span>
-              <h2>
-                Réservez votre machine,
-                <br />
-                <em>arrivez l&apos;esprit tranquille.</em>
-              </h2>
-              <p className="lede">
-                Bloquez une machine depuis chez vous via l&apos;application, ou
-                remplissez ce formulaire pour une réservation par téléphone — on
-                vous confirme sous 1h.
-              </p>
-              <span className="gold-rule" aria-hidden="true" />
-            </div>
-            <MachineReservationForm />
-          </div>
-        </section>
-
         {/* ═══════════════════ COLLECTE LINGE À DOMICILE ═══════════════════ */}
-        <section className="bg-creme-2" id="pickup">
+        <section className="bg-creme" id="pickup">
           <div className="container">
             <div className="section-head">
-              <span className="eyebrow">◆ 04 — Collecte à domicile</span>
+              <span className="eyebrow">◆ 03 — Collecte à domicile</span>
               <h2>
                 Votre linge,
                 <br />
@@ -251,7 +230,7 @@ export default function Home() {
         <section className="bg-vert" id="pros">
           <div className="container">
             <div className="section-head">
-              <span className="eyebrow">◆ 05 — Professionnels</span>
+              <span className="eyebrow">◆ 04 — Professionnels</span>
               <h2>
                 Pour les pros&nbsp;:
                 <br />
@@ -307,7 +286,7 @@ export default function Home() {
         <section className="bg-vert" id="evenement">
           <div className="container">
             <div className="section-head">
-              <span className="eyebrow">◆ 06 — Privatisation</span>
+              <span className="eyebrow">◆ 05 — Privatisation</span>
               <h2>
                 Votre événement
                 <br />
@@ -350,7 +329,7 @@ export default function Home() {
         <section className="bg-creme-2" id="animaux">
           <div className="container">
             <div className="section-head">
-              <span className="eyebrow">◆ 07 — Linge animaux</span>
+              <span className="eyebrow">◆ 06 — Linge animaux</span>
               <h2>
                 Réservez une <em>épillette</em>
                 <br />
@@ -372,7 +351,7 @@ export default function Home() {
         <section className="bg-marron" id="ouvrir">
           <div className="container">
             <div className="section-head">
-              <span className="eyebrow">◆ 08 — Entreprendre</span>
+              <span className="eyebrow">◆ 07 — Entreprendre</span>
               <h2>
                 Lancez votre propre
                 <br />
@@ -414,11 +393,10 @@ export default function Home() {
             <div className="footer-col">
               <h4>Particuliers</h4>
               <ul>
-                <li><a href="#reservation">Réserver une machine</a></li>
+                <li><a href="#app">Réserver via l&apos;app</a></li>
                 <li><a href="#pickup">Collecte à domicile</a></li>
                 <li><a href="#animaux">Linge animaux</a></li>
                 <li><a href="#evenement">Privatisation</a></li>
-                <li><a href="#app">App &amp; Bonus</a></li>
               </ul>
             </div>
 
