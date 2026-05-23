@@ -9,13 +9,16 @@ export function ProLinenForm() {
 
   return (
     <form
-      action={(formData) => {
+      onSubmit={(e) => {
+        e.preventDefault();
+        const form = e.currentTarget;
+        const formData = new FormData(form);
         setResult(null);
         startTransition(async () => {
           const res = await submitProLinen(formData);
           setResult(res);
           if ('success' in res) {
-            (document.getElementById('pro-form') as HTMLFormElement)?.reset();
+            form.reset();
           }
         });
       }}
