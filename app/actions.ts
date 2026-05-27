@@ -7,10 +7,10 @@ export type FormResult =
 const RESEND_API_KEY = process.env.RESEND_API_KEY;
 const FROM_EMAIL =
   process.env.RESEND_FROM_EMAIL ??
-  'Café Laverie Nevers <noreply@fullconciergerie.com>';
+  'Café Laverie Nevers <noreply@fullconciergerie.fr>';
 // Destinataire : Delil (boîte café laverie). Modifiable via env var.
 const TO_EMAIL =
-  process.env.CAFE_LAVERIE_TO_EMAIL ?? 'contact@cafe-laverie.fr';
+  process.env.CAFE_LAVERIE_TO_EMAIL ?? 'contact@cafelaverie.fr';
 
 /**
  * Validations partagées entre toutes les soumissions.
@@ -220,8 +220,7 @@ async function sendNotification(
         body.slice(0, 300),
       );
       return {
-        error:
-          "Impossible d'envoyer la demande pour le moment. Réessayez ou appelez-nous directement.",
+        error: `[DEBUG ${res.status}] FROM=${FROM_EMAIL} TO=${TO_EMAIL} — ${body.slice(0, 400)}`,
       };
     }
   } catch (err) {

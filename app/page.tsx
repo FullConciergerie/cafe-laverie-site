@@ -418,7 +418,7 @@ export default function Home() {
               <h4>Contact</h4>
               <ul>
                 <li><a href="tel:+33376150227">03 76 15 02 27</a></li>
-                <li><a href="mailto:contact@cafe-laverie.fr">contact@cafe-laverie.fr</a></li>
+                <li><a href="mailto:contact@cafelaverie.fr">contact@cafelaverie.fr</a></li>
                 <li>16 Quai de Mantoue<br />58000 Nevers</li>
                 <li><strong>Sur demande</strong> — Pas d&apos;horaires fixes</li>
               </ul>

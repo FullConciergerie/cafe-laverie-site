@@ -119,14 +119,14 @@ export default function NotFound() {
             📞 03 76 15 02 27
           </a>
           <a
-            href="mailto:contact@cafe-laverie.fr"
+            href="mailto:contact@cafelaverie.fr"
             style={{
               fontFamily: 'var(--serif)',
               fontSize: 18,
               color: 'var(--marron-cafe)',
             }}
           >
-            ✉ contact@cafe-laverie.fr
+            ✉ contact@cafelaverie.fr
           </a>
         </div>
       </div>
